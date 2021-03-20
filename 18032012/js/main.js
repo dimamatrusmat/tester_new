@@ -1,4 +1,4 @@
-let es = document.querySelector('.es');
+//let es = document.querySelector('.es');
 // let num = 49;   
 
 // switch (num){
@@ -365,36 +365,106 @@ let es = document.querySelector('.es');
 
 ////////
 
-function convertInt(a, b, c) {
-    let r = a * b + c,
-        one = 0, two = 0, three = 0, four = 0, five = 0, six = 0;
-    switch(r == r){
-        case (r > 100000): 
-            one =  Math.floor(r / 100000);
-            r = r - one * 100000;
-        case r > 10000: 
-            two = Math.floor(r / 10000);
-            r = r - two * 10000;
-        case r > 1000: 
-            three = Math.floor(r / 1000);
-            r = r - three * 1000;
-        case r > 100: 
-            four =  Math.floor(r / 100);
-            r = r - four * 100;
-        case r > 10: 
-            five = Math.floor(r / 10);
-            r = r - five * 10;
-        case r > 1: 
-            six = Math.floor(r / 1);
-            r = r - six * 1;
-    }
-   es.innerHTML += " " +(one + two + three + four + five + six);
-}
+// function convertInt(a, b, c) {
+//     let r = a * b + c,
+//         one = 0, two = 0, three = 0, four = 0, five = 0, six = 0;
+//     switch(r == r){
+//         case (r > 100000): 
+//             one =  Math.floor(r / 100000);
+//             r = r - one * 100000;
+//         case r > 10000: 
+//             two = Math.floor(r / 10000);
+//             r = r - two * 10000;
+//         case r > 1000: 
+//             three = Math.floor(r / 1000);
+//             r = r - three * 1000;
+//         case r > 100: 
+//             four =  Math.floor(r / 100);
+//             r = r - four * 100;
+//         case r > 10: 
+//             five = Math.floor(r / 10);
+//             r = r - five * 10;
+//         case r > 1: 
+//             six = Math.floor(r / 1);
+//             r = r - six * 1;
+//     }
+//    es.innerHTML += " " +(one + two + three + four + five + six);
+// }
 
-let string = '164 279 134,216 197 33,236 99 120,316 139 137,318 212 100,40 255 103,99 241 107,304 118 178,292 52 40,198 154 188,89 99 28,258 195 171',
-    arr = string.split(',');
+// let string = '164 279 134,216 197 33,236 99 120,316 139 137,318 212 100,40 255 103,99 241 107,304 118 178,292 52 40,198 154 188,89 99 28,258 195 171',
+//     arr = string.split(',');
 
-    for(let key of arr){
-        let inArr = key.split(' ');
-        convertInt(+inArr[0], +inArr[1], +inArr[2])
-    }
+//     for(let key of arr){
+//         let inArr = key.split(' ');
+//         convertInt(+inArr[0], +inArr[1], +inArr[2])
+//     }
+//////////////
+
+let box = document.querySelector('#cub'),
+    cubs = document.querySelectorAll('.cubs'),
+    rad = document.querySelectorAll('.rad');
+
+// box.style.backgroundColor = 'blue';
+// cubs[1].style.backgroundColor = '#e2e';
+// cubs[1].style.borderRadius = '50%';
+// rad[0].style.backgroundColor = 'red';
+// rad[1].style.backgroundColor = 'yellow';
+// rad[2].style.backgroundColor = '#132';
+
+// rad.forEach(function(item, i, rads) {
+//     item.style.backgroundColor = "blue"
+// });
+
+// let div = document.createElement('div'),
+//     text = document.createTextNode('Ага тут текси');
+
+// div.classList.add('cubs');
+// //document.body.appendChild(div); //Добавляем див в конец бади
+// //cub.appendChild(div)
+// div.style.color = 'blue';
+
+// // div.innerHTML = '<h1>Text is hello world</h1>';
+// div.textContent = "<h1>Text is hello world</h1>" //Теги тут не робят
+// document.body.insertBefore(div, cubs[2]); //Добавить перед 
+// // document.body.removeChild(cubs[2])
+
+// document.body.replaceChild(cubs[3], rad[1]) // 2 элемент заменяеться первым
+
+// console.log(div)
+
+// let btn = document.querySelectorAll('.btn'),
+//     text = document.querySelector('#text'),
+//     link = document.querySelector('a');
+
+// // btn.addEventListener('click', function(event){
+// //     let target = event.target;
+// //     target.style.display = 'none';
+// //     // console.log('Произошло событие ' + event.type + ' на элементе ' + event.target);
+// // });
+
+// // link.addEventListener('click', function(){
+// //     event.preventDefault();
+// //     console.log('Произошло событие ' + event.type + ' на элементе ' + event.target);
+// // });
+
+// btn.forEach(function(item){
+//     item.addEventListener('click', function(){
+//         console.log('Нажали!');
+//     });
+// });
+
+// btn.forEach(function(item){
+//     item.addEventListener('mouseleave', function() {
+//         console.log('Вышли!');
+//     });
+// });
+
+let sourse = document.querySelector('#sourse'),
+    body = document.body,
+    color = ['blue', 'red', 'yellow'];
+
+    body.addEventListener('click', function() {
+    sourse.innerHTML = +sourse.innerHTML + 1;
+
+    body.style.backgroundColor = color[Math.round(Math.random() * color.length)];
+});
