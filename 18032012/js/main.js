@@ -692,10 +692,82 @@
 
 // console.log(double(3))
 //5) Оброботчик сам обрабатываекмый элемент
-let btn = document.getElementById('btn');
+// let btn = document.getElementById('btn');
 
-    console.log(btn)
+//     console.log(btn)
 
-btn.addEventListener('click', function() {
-    this.style.display = 'none'
-});
+// btn.addEventListener('click', function() {
+//     this.style.display = 'none'
+// });
+//////////Weighted sum of digits
+// let string = '834 1410 12005 732161 55034910 12 13412021 90605441 440733715 34100886 15048231 4 16591136 779 1150142 64304111 2780686 1 4 476 142 68487 45675 16 116766800 95749 90497 203582 149106 3 565 390',
+//     arrStr = string.split(' '),
+//     ans = []
+
+//     for (let i = 0; i < arrStr.length; i++){
+//        let num = +arrStr[i],
+//             number = 0,
+//             nesNumber = 1;
+//         for (let o = arrStr[i].length - 1; o >= 0; o--){
+//             let ost = Math.floor(num/10**o);
+//             number = number + ost * nesNumber;
+
+//             num = num - ost*10**o;
+//             nesNumber += 1;
+           
+//         }
+//         ans.push(number);
+//     }
+
+// let wrap = document.querySelector('.wrap');
+
+// wrap.innerHTML = ans.join(' ');
+
+// Modulo and time difference
+
+let wrap = document.querySelector('.wrap'),
+    str = '1 4 22 40 24 17 56 37,1 16 17 2 13 7 41 41,22 10 53 59 29 2 12 49,12 8 55 42 24 16 42 2,10 15 30 38 17 16 58 12,6 16 53 45 13 22 50 51,15 14 28 6 18 22 30 27,15 19 0 38 24 22 17 17,8 0 59 47 25 18 51 32,8 17 8 8 11 6 30 52,17 16 57 46 23 10 48 30',
+    arrStr = str.split(','),
+    ans = [];
+
+    function howMuch(arr) {
+        let arr1 = [],
+            arr2 = [],
+            arr3 = [];
+        for (let i = arr.length; i > 0; i--){
+           if (i >= 5) {
+               arr2.unshift(arr.pop())
+           } else {
+               arr1.unshift(arr.pop())
+           }
+        }
+        let ans1 = 0,
+            ans2 = 0,
+            ans3 = 0;
+        
+        ans1 = +arr1[0] * 86400 + +arr1[1] * 3600 + +arr1[2] * 60 + +arr1[3];
+        ans2 = +arr2[0] * 86400 + +arr2[1] * 3600 + +arr2[2] * 60 + +arr2[3]
+        
+        ans3 = ans2 - ans1;
+        let day = Math.floor(ans3/86400);
+        ans3 -= day * 86400;
+        let hour = Math.floor(ans3/3600);
+        ans3 -= hour * 3600;
+        let min = Math.floor(ans3/60);
+        ans3 -= min * 60;
+        let sec = ans3;
+        ans3 -= sec;
+
+        arr3.push(day);
+        arr3.push(hour);
+        arr3.push(min);
+        arr3.push(sec);
+
+        ans.push('(' + arr3.join(' ') + ')');
+        wrap.innerHTML = ans.join(' ');
+    }
+
+
+    for (let i = 0; i < arrStr.length; i++) {
+        howMuch(arrStr[i].split(' '));
+    }
