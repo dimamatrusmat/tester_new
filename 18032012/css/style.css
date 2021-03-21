@@ -1,4 +1,13 @@
-#cub {
+body {
+    background-color: #1B2838;
+    color: white;
+    width: auto;
+}
+.wrap {
+    text-align: center;
+    margin: 20px auto;
+}
+/* #cub {
     width: 100px;
     height: 100px;
     background-color: red;
@@ -33,4 +42,82 @@
 .wrap {
     width: 100%;
     height: 500px;
+}
+.price {
+    position: relative;
+    left: -50px;
+}
+.priceFinish {
+    position: absolute;
+    top: 1px;
+    left: 135px;
+		color: white;
+		background-color: #e51;
+} */
+
+
+/* Steam */
+/* span > span.sale_price {
+	display: block !important;
+	color: green !important;
+}
+span > span.normal_price {
+	display: block !important;
+	color: red !important;
+}
+span.market_listing_price.market_listing_price_with_fee{
+color: #E10505 !important;
+}
+span.market_listing_price.market_listing_price_without_fee{
+display: block !important;
+color: #08B032 !important;
+padding-top: 5px;
+}
+div#market_buyorder_info_details {
+display: block !important;
+}
+a.item_market_action_button{
+	top: 60px;
+	left: 240px;
+}
+
+.price {
+    position: relative;
+    left: -50px;
+}
+.priceFinish {
+    position: absolute;
+    top: 1px;
+    left: 110px;
+		color: white;
+		background-color: inherit;
+} */
+
+.btn {
+    height: 30px;
+    width: 100px;
+    background-color: #fef;
+    color: black;
+    border: none;
+}
+
+.box {
+    border: brown 5px solid;
+    position: relative;
+    width: 500px;
+    height: 200px;
+    overflow: auto;
+    margin: 20px auto;
+}
+.boxIn {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    left: 0;
+}
+.an {
+    background-color: #99e;
+    height: 50px;
+    width: auto;
 }

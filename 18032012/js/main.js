@@ -400,9 +400,9 @@
 //     }
 //////////////
 
-let box = document.querySelector('#cub'),
-    cubs = document.querySelectorAll('.cubs'),
-    rad = document.querySelectorAll('.rad');
+// let box = document.querySelector('#cub'),
+//     cubs = document.querySelectorAll('.cubs'),
+//     rad = document.querySelectorAll('.rad');
 
 // box.style.backgroundColor = 'blue';
 // cubs[1].style.backgroundColor = '#e2e';
@@ -418,7 +418,7 @@ let box = document.querySelector('#cub'),
 // let div = document.createElement('div'),
 //     text = document.createTextNode('Ага тут текси');
 
-// div.classList.add('cubs');
+// div.('')('cubs');
 // //document.body.appendChild(div); //Добавляем див в конец бади
 // //cub.appendChild(div)
 // div.style.color = 'blue';
@@ -459,12 +459,243 @@ let box = document.querySelector('#cub'),
 //     });
 // });
 
-let sourse = document.querySelector('#sourse'),
-    body = document.body,
-    color = ['blue', 'red', 'yellow'];
+// let sourse = document.querySelector('#sourse'),
+//     body = document.body,
+//     color = ['blue', 'red', 'yellow'];
 
-    body.addEventListener('click', function() {
-    sourse.innerHTML = +sourse.innerHTML + 1;
+//     body.addEventListener('click', function() {
+//     sourse.innerHTML = +sourse.innerHTML + 1;
 
-    body.style.backgroundColor = color[Math.round(Math.random() * color.length)];
+//     body.style.backgroundColor = color[Math.round(Math.random() * color.length)];
+// });
+
+///////// Steam
+
+// function round() {
+    
+//     var delay = 800 * Math.random();
+//     setTimeout(function () {
+//                     let box = document.querySelectorAll("#market_commodity_forsale_table > table > tbody > tr");
+//         let priceS = document.querySelector('.priceFinish');
+//         if (priceS == null){
+//         for (let i = 1; i < box.length; i++){
+//             let price = document.querySelector(`#market_commodity_forsale_table > table > tbody > tr:nth-child(${i}) > td:nth-child(1)`);
+//             let priceFinish = document.createElement('tr');
+        
+//             if (price != null){
+//                 price.classList.add('price');
+//                 priceFinish.innerHTML = price.innerHTML.replace(/[^\d,;]/g, '');
+//                 priceFinish.innerHTML = priceFinish.innerHTML.replace(/,/, '.');
+//                 priceFinish.innerHTML = (priceFinish.innerHTML - priceFinish.innerHTML * 0.13).toFixed(2);
+//                 priceFinish.classList.add('priceFinish');
+//                 price.appendChild(priceFinish);
+//             }
+
+//         }
+//     }
+
+//         round();
+//     }, delay);
+    
+// }
+
+// round();
+
+// let timeId = setInterval(seyHello, 3000);
+
+// // clearTimeout(timeId);
+
+// function seyHello(){
+//     console.log('Hello world');
+// }
+
+
+// let timeId = setTimeout(function log() {
+//     console.log('hello');
+//     setTimeout(log, 1000)
+// })
+
+// function log(){
+//     console.log('hello')
+// }
+
+// let btn = document.querySelector('.btn'),
+//     box = document.querySelector('.box'),
+//     elem = document.querySelector('.boxIn');
+
+// btn.addEventListener('click', myAnimatet)
+// function myAnimatet(){
+//     let pos = 0;
+
+//     let id = setInterval(frame, 10);
+//     function frame(){
+//         if (pos == 460) {
+//             function frameOne(){
+//                 if (pos == 0) {
+//                     setInterval(frame, 10);
+//                 } else {
+//                 pos--
+//                 elem.style.top = pos + 'px';
+//                 elem.style.left = pos + 'px';
+//             }
+//             }
+//             setInterval(frameOne,10);
+//         } else {
+//             pos++
+//             elem.style.top = pos + 'px';
+//             elem.style.left = pos + 'px';    }
+//     }
+// }
+
+// let btnAn = document.querySelectorAll('btnAn'),
+//     an = document.querySelector('.an')
+
+// an.addEventListener('click', function(e){
+//     // if (e.target && e.target.classList.contains('btnAn')){
+//     //     console.log('hello')
+//     // }
+//     // if (e.target && e.target.matches('button.btnAn')){
+//     //         console.log('hello')
+//     //     }
+//     if (e.target && e.target.className =='btnAn'){
+//         console.log('hello')
+//     }
+// })
+
+// let box = document.querySelector('.box'),
+//     btn = document.getElementsByTagName('button')[0];
+
+// let width = box.clientWidth,
+//     height = box.clientHeight;
+
+
+// console.log(box.getBoundingClientRect());
+
+// console.log(document.documentElement.clientWidth)
+// console.log(document.documentElement.clientHeight)
+
+
+// btn.addEventListener('click',function(e){
+//     box.scrollTop = 0;
+// });
+
+// scrollBy(0, 200)// Перемещение скрпула от текущего 
+// scrollTo(0, 200) // Перемещение скрпула на определенную координату
+
+///////////////////Fucnrtui
+
+// function User(name, id) {
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//     this.hello = function(){
+//         console.log('hello' + this.name)
+//     }
+// }
+
+// User.prototype.exit = function (name) {
+//     console.log('Пользователь ' + this.name + ' вышел')
+// }
+
+// let Ivan = new User('Ivan', 1),
+//     Alex = new User('Alex', 2);
+
+// console.log(Ivan)
+// console.log(Alex)
+
+
+// class User {
+//     constructor(name, id) {
+//         this.name = name;
+//         this.id = id;
+//         this.human = true;
+//     }
+//     hello () {
+//         console.log(`Hello! ${this.name}`)
+//     }
+//     exit () {
+//         console.log(`Bye! ${this.name}`)
+//     }
+// }
+
+// let Ivan = new User('Ivan', 23);
+// let Alex = new User('Alex', 1);
+
+// console.log(Ivan)
+// console.log(Alex)
+
+// Ivan.hello()
+// Alex.exit()
+
+
+// class User {
+//     constructor (name, number, email) {
+//         this.name = name;
+//         this.number = number;
+//         this.email = email;
+//     }
+//     hello () {
+//         alert(`Hello ${this.name}. Вам скоро перезвонят на ${this.number}`)
+//     }
+// }
+
+// let name = document.querySelector('#name'),
+//     number = document.querySelector('#number'),
+//     email = document.querySelector('#email'),
+//     btn = document.querySelector('#btn');
+
+// btn.addEventListener('click', function(){
+//     let Ofuser = new User(name.value,number.value,email.value);
+//     console.log(Ofuser)
+// });
+// 1) Вызов функции window/underfined
+// function showThis(a, b) {
+//     console.log(this)
+//     function sum(){
+//         console.log(this)
+//         return this.a + this.b;
+//         console.log(this.a);
+//     }
+//     console.log(sum())
+// }
+// showThis(3,5)
+// 2) Метод объекта this = объекту
+
+// let obj = {
+//     a: 20,
+//     b: 15,
+//     sum: function (a, b) {
+//         console.log(this.a + this.b);
+//     }
+// };
+
+// obj.sum();
+// 3) Кострукстор (new) - this = новый созданный объект
+// 4)  Конкретный контекст call, apply, bind
+
+// let user = {
+//     name: 'John'
+// };
+
+// function sayName(sur){
+//     console.log(this);
+//     console.log(this.name + sur)
+// }
+// console.log(sayName.call(user, 'Sergo')); // только строка
+// console.log(sayName.apply(user, ['Sergo', 'Anna', 'Dima'])); // только массив
+
+// function count(number) {
+//     return this * number;
+// }
+
+// let double = count.bind(2); // заменяет this на 2
+
+// console.log(double(3))
+//5) Оброботчик сам обрабатываекмый элемент
+let btn = document.getElementById('btn');
+
+    console.log(btn)
+
+btn.addEventListener('click', function() {
+    this.style.display = 'none'
 });
