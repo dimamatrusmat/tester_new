@@ -483,7 +483,7 @@
 //             let priceFinish = document.createElement('tr');
         
 //             if (price != null){
-//                 price.classList.add('price');
+//                 price..add('div').add('price');
 //                 priceFinish.innerHTML = price.innerHTML.replace(/[^\d,;]/g, '');
 //                 priceFinish.innerHTML = priceFinish.innerHTML.replace(/,/, '.');
 //                 priceFinish.innerHTML = (priceFinish.innerHTML - priceFinish.innerHTML * 0.13).toFixed(2);
@@ -725,49 +725,495 @@
 
 // Modulo and time difference
 
-let wrap = document.querySelector('.wrap'),
-    str = '1 4 22 40 24 17 56 37,1 16 17 2 13 7 41 41,22 10 53 59 29 2 12 49,12 8 55 42 24 16 42 2,10 15 30 38 17 16 58 12,6 16 53 45 13 22 50 51,15 14 28 6 18 22 30 27,15 19 0 38 24 22 17 17,8 0 59 47 25 18 51 32,8 17 8 8 11 6 30 52,17 16 57 46 23 10 48 30',
-    arrStr = str.split(','),
-    ans = [];
+// let wrap = document.querySelector('.wrap'),
+//     str = '1 4 22 40 24 17 56 37,1 16 17 2 13 7 41 41,22 10 53 59 29 2 12 49,12 8 55 42 24 16 42 2,10 15 30 38 17 16 58 12,6 16 53 45 13 22 50 51,15 14 28 6 18 22 30 27,15 19 0 38 24 22 17 17,8 0 59 47 25 18 51 32,8 17 8 8 11 6 30 52,17 16 57 46 23 10 48 30',
+//     arrStr = str.split(','),
+//     ans = [];
 
-    function howMuch(arr) {
-        let arr1 = [],
-            arr2 = [],
-            arr3 = [];
-        for (let i = arr.length; i > 0; i--){
-           if (i >= 5) {
-               arr2.unshift(arr.pop())
-           } else {
-               arr1.unshift(arr.pop())
-           }
+//     function howMuch(arr) {
+//         let arr1 = [],
+//             arr2 = [],
+//             arr3 = [];
+//         for (let i = arr.length; i > 0; i--){
+//            if (i >= 5) {
+//                arr2.unshift(arr.pop())
+//            } else {
+//                arr1.unshift(arr.pop())
+//            }
+//         }
+//         let ans1 = 0,
+//             ans2 = 0,
+//             ans3 = 0;
+        
+//         ans1 = +arr1[0] * 86400 + +arr1[1] * 3600 + +arr1[2] * 60 + +arr1[3];
+//         ans2 = +arr2[0] * 86400 + +arr2[1] * 3600 + +arr2[2] * 60 + +arr2[3]
+        
+//         ans3 = ans2 - ans1;
+//         let day = Math.floor(ans3/86400);
+//         ans3 -= day * 86400;
+//         let hour = Math.floor(ans3/3600);
+//         ans3 -= hour * 3600;
+//         let min = Math.floor(ans3/60);
+//         ans3 -= min * 60;
+//         let sec = ans3;
+//         ans3 -= sec;
+
+//         arr3.push(day);
+//         arr3.push(hour);
+//         arr3.push(min);
+//         arr3.push(sec);
+
+//         ans.push('(' + arr3.join(' ') + ')');
+//         wrap.innerHTML = ans.join(' ');
+//     }
+
+
+//     for (let i = 0; i < arrStr.length; i++) {
+//         howMuch(arrStr[i].split(' '));
+//     }
+// let data = '75 + 9 + 7 * 578 * 2 + 553 + 71 + 297 + 84 + 2199 + 8 + 57 * 65 * 36 * 6 * 464 * 9002 + 5 * 1 + 78 * 4 + 90 + 3083 + 6825 * 23 + 1090 * 81 + 7469 * 38 * 431 * 1622 * 3576 + 9530 * 1 + 960 * 1 * 1 + 7 + 2 + 4 * 91 * 37 * 5 * 61 + 698 * 8221 + 4246 * 651 + 5 * 960 % 6428'
+// //1480
+// let input = document.querySelector('.str'),
+//     btn = document.querySelector('.btn');
+
+// btn.addEventListener('click', function(){
+//     let str = input.value.split(' '),
+//     num = BigInt(+str[0]),
+//         ans = 0;
+//     for (let i = 0; i < str.length - 1 ; i++) {
+//        switch(str[i]){
+            
+//            case ('+'): num = BigInt(num) + BigInt(str[i + 1]);
+//                break; 
+//             case ('*'): num = BigInt(num) * BigInt(str[i + 1]);
+//                break; 
+//             case ('%'): ans = BigInt(num) % BigInt(str[i + 1]);
+//                break; 
+//        }
+
+//     }
+//       console.log(num) // Вывыоди полное число после всех преобразований, кроме модуля
+//       console.log(ans.toString()) // Модуль всех преобразований
+
+// })
+
+
+// void function () {
+//   const a = data.split(/\n/g).map((e) => e.trim().split(/\s/));
+//   let initValue = BigInt(a.splice(0, 1)[0])
+//   for (let [o, v] of a) {
+//     initValue = new Function('initValue', 'v', `return initValue ${o}= v`)(initValue, BigInt(v))
+//   }
+//   console.log(initValue.toString())
+// }()
+
+
+// let input = '-47210 7189 -58555 13862 36592 29937 -64938 -47771 50987 -45183 -48237 -2471 -200 65965 55204 67775 4668 78211 -46765 25060 -31884 33965 1694 -31832 43963 21377 15008 20901 -44772 18198 68870 49283 36934 28528 -58874 -5964 33953 -34007 -33759 -9173 -17236 33905 -4374 -63912 25880 -26037 75348 -42447 -7535 42143 -33601 68567 56166 43145 -5048 -29226 -794 26533 76169 -44054 39783 -56161 25514 -11303 -60399 7711 -19135 67626 -77096 44875 -49899 -15465 60038 -30761 26453 -47578 52459 -25786 -68181 18398 -49068 54611 -66118 24894 -25786 -18426 79936 43865 64185 20935 50105 -54394 70987 23698 52154 23931 -2416 -40933 52844 39576 -26822 2724 -56931 52847 61497 -30480 26822 55572 -8089 -13010 20517 51417 -53915 55023 187 -68572 -37241 -51445 78375 52492 60714 -27625 79334 -51600 64870 12315 -33042 74861 50219 50742 -1223 -36146 -58205 22897 -38333 50163 -52116 62807 21379 -74985 -20895 -14085 -5193 -12742 -27837 -69987 -31487 55690 -27544 27148 -25759 47268 -78619 65666 17140 41107 -893 -69142 40411 -3165 65365 10722 -48778 34372 44807 -14899 10308 8995 54216 -52108 -20126 -72502 53379 25767 -75862 10481 -24638 79021 61183 -77144 -13787 59174 -64631 45654 -7844 56601 -52924 63625 -55353 30116 -33504 50986 -76283 50405 76404 -24801 31560 69671 -7787 322 66256 -36987 57334 305 73906 -79752 22125 -41923 41030 30443 -48722 -54435 29221 26630 -15729 16149 29240 -56044 78411 46248 -57225 -76397 79918 39118 20116 12351 53847 -36887 -26790 48617 -18537 36006 27552 -44420 5012 -50460 53469 13386 -74328 57748 25641 6455 27329 28753 -27175 -43878 5039 67207 -24234 21841 75554 -53954 42800 36755 43834 -26965 2826 5062 -604 -20541 -39463 34334 62903 -11454 66134 25939 -77870 -60703 -18947 -69207 -42093 49331 40334 26806 50343 778 -52713 -39825 48236 1129 -375 -74589 29994 79670 -73176 21665 -32315 30213 -38093 59986 14554 -54216 -4606 495 -70875 64652 79938 3107 -37873 40163',//document.querySelector('.str'),
+//     btn = document.querySelector('.btn');
+
+// btn.addEventListener('click', function(){
+//     let num = input.trim().replace(-/[^\d]+/g," ") ;//.value
+//     num = num.split(' ');
+//     let min = Number(num[0]),
+//         max = Number(num[0]);
+//     for (let key of num){
+//         if(min > Number(key)){
+//           min = Number(key);
+//         }
+//         if(max < Number(key)){
+//           max = Number(key);
+//         }
+//     }
+//     console.log(max);
+//     console.log(min)
+// });
+
+// console.log(
+//   `51370 28988 37729 59784 -77910 39060 35850 -2293 43056 -13024 -46964 -39701 -78910 -48243 -79663 -77218 -35684 67416 -23628 30141 -43027 -18429 -5560 -19608 3060 3387 -75860 14403 24168 -26086 -65167 -4462 -77097 52561 -24678 -75008 11622 -68828 2699 -25321 -1852 35734 14977 -762 67491 15314 2019 -48192 2730 58391 61948 39703 -40037 -23612 -59905 43022 59775 -55765 -22575 3943 -1852 -7743 79481 1051 -35181 -25196 6042 56441 -14024 -71259 -48880 64123 44475 46097 -16639 31966 -18589 65380 63774 64140 43772 45723 23844 -76265 -57889 43938 46756 -78113 68172 -55819 5830 -13679 16438 5311 67371 61256 60115 -6586 37698 -33909 2154 68817 -49786 -33370 34915 13575 78596 -63674 -1044 62370 -79533 -37272 28093 24310 -33538 50204 -11751 -66782 52090 -23579 -42601 -22079 42742 53836 63232 30114 35093 43347 -56472 -7209 -70562 25682 -18391 -40348 72311 -63476 53227 70907 -47151 -27817 53277 -46684 14911 1371 57625 61372 -28425 -34126 74590 -56334 22295 -48010 1586 -14962 -74173 -15182 -64848 40919 -51834 -41321 -46289 -42397 64361 15320 -2745 56672 31843 -29518 47579 64692 22665 20857 -61992 -42423 -57772 75633 -61050 -6197 -38492 -66459 17468 63803 -34470 -60945 -31159 -28644 3873 -16007 -67724 32038 22672 -34013 69640 7033 61306 -13104 -16295 13150 37378 -48715 -2157 -19957 52141 15851 17619 74369 11484 36569 -11827 52992 50109 -74358 36795 -64361 -55304 -74363 -13005 28568 -10371 -729 -19394 -67699 45257 -29753 19333 26564 37142 -76961 -40285 -5480 -45677 37557 54563 -73535 -26592 -7817 -79165 64892 -51248 -10993 37884 78860 -5352 -5320 -65500 19344 316 1494 -32087 69945 -79235 28519 -77753 46022 78765 21579 -7413 35908 24618 32301 -49571 58941 -10141 -75007 65406 43267 -2825 66240 28159 25927 -24752 -13956 24787 49896 60724 39287 -10759 -18959 -39219 37153 -29014 -38454 -14328 -26768 -72431 -15562 74811 156 -59654 19429 -47542 -29225 -1629 22316 -24233 -16223 -14416 52942 -29983 -66256`
+//     .split(' ')
+//     .map(i => +i)
+//     .reduce(([max, min], value) => [
+//       value > max ? value : max,
+//       value < min ? value : min
+//     ], [-Infinity, Infinity])
+//     .join(' ')
+// )
+
+// class User {
+//   constructor(name, id, year) {
+//     this.name = name,
+//     this.id = id,
+//     this.year = year
+//   }
+// }
+
+// let Kata = new User('Kata', 2, 2002)
+
+
+// function makeArray() {
+//   var items = [];
+
+//   for (let i = 0; i <= 10; i++) {
+//     var item = function(){
+//       console.log(i);
+//     }
+//     items.push(item)
+//   }
+//   return items
+// }
+// var arr = makeArray();
+// arr[1]()
+// arr[2]()
+// arr[3]()
+// arr[4]()
+
+// let fun = () => {
+//   console.log(this)
+// };
+// fun()
+
+// let obj = {
+//   number: 123,
+//   setNumber: function(){
+//       let say = () => {
+//         console.log(this.number);
+//       };
+//       say();
+//   }
+// };
+// obj.setNumber();
+
+// let btn = document.querySelector('.btn');
+
+// btn.addEventListener('click', function(){
+//     let show = () => {
+//       console.log(this.style.display = 'none');
+//     };
+//     show();
+// });
+
+// function calcOrDuoble(number, basis = 2) {
+//   console.log(number * basis)
+// }
+// calcOrDuoble(1)
+
+// class Rectangle {
+//   constructor(height, weidth) {
+//     this.height = height;
+//     this.weidth = weidth;
+//   }
+//   calcArea() {
+//     return this.height * this.weidth;
+//   }
+// }
+
+// const square = new Rectangle(400, 400)
+
+// console.log(square)
+
+// let video = ['youtube', 'vk', 'inst'],
+//     blogs = ['wordpress', 'live'],
+//     intertet = [...video,...blogs, 'vk'];
+
+// console.log(intertet)
+
+// function log(a, b, c) {
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+//   console.log(a + b + c);
+// }
+
+// let numbers = [2, 5 ,7];
+
+// log(...numbers)
+
+// let options = {
+//     width: 1366,
+//     height: 768,
+//     background: 'red',
+//     font: {
+//       size: '16px',
+//       color: 'white'
+//     }
+// };
+
+// console.log(JSON.parse(JSON.stringify(options)));
+
+// let a = '';
+// for (let i = 0; i < 7; i++) { 
+//   console.log(a += "#" )
+// }
+// let i = 1;
+// while (i <= 100){
+//     if(i % 3 == 0 && i % 15 != 0){
+//         console.log('Fizz');
+//     }
+//     if(i % 5 == 0 && i % 15 != 0){
+//         console.log('Buzz');
+//     }
+//     if(i % 15 == 0){
+//         console.log('FizzBuzz');
+//     }
+//     if(i % 3 != 0 && i % 5 != 0 && i % 15 != 0){
+//         console.log(i);
+//     }
+    
+//   i++
+// }
+// let res = '# ';
+// for (let i = 0; i < 8; i++){
+//     for (let o = 0; o < 8; o++) {
+//        if(res.toString().substr(-1) != ' ') {
+//             res = res + '#';
+//        } else if (res.toString().substr(-1) != '#') {
+//             res = res + 'o';
+//        } else if (0 == 7){
+//            res = res + '/n';
+//        }
+//     }
+    
+// }
+// console.log()
+
+// function round() {
+
+//     var delay = 800 * Math.random();
+//     setTimeout(function () {
+//                     let box = document.querySelectorAll("#market_commodity_forsale_table > table > tbody > tr");
+//         let priceS = document.querySelector('.priceFinish');
+//         if (priceS == null){
+//         for (let i = 2; i < box.length; i++){
+//             let price = document.querySelector(`#market_commodity_forsale_table > table > tbody > tr:nth-child(${i}) > td:nth-child(1)`);
+//             let priceFinish = document.createElement('tr');
+           
+//             if (price != null){
+//                 price.classList.add('price');
+//                 priceFinish.innerHTML = price.innerHTML.replace(/[^\d,;]/g, '');
+//                 priceFinish.innerHTML = priceFinish.innerHTML.replace(/,/, '.');
+//                 priceFinish.innerHTML = (priceFinish.innerHTML - priceFinish.innerHTML * 0.13).toFixed(2);
+//                 priceFinish.classList.add('priceFinish');
+//                 price.appendChild(priceFinish);
+//             }
+
+//         }
+//     }
+
+//         round();
+//     }, delay);
+
+// }
+
+// round();
+
+
+
+// const cells = [];
+// for(let i=0;i<64;i++){
+//   cells.push({
+//     color: i%2?'black':'white',
+//     x: i%8,
+//     y: ~~(i/8)
+//   });
+// }
+// console.log()
+
+// let inputRub = document.querySelector('.rub'),
+//     inputUsd = document.querySelector('.usd')
+
+// inputRub.addEventListener('input', () => {
+//     let request = new XMLHttpRequest();
+//     //request.open(method, url, async, login, pass)
+//     request.open('GET', 'js/current.json');
+//     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+//     request.send();
+
+//     //status - в каком состаяние сервер (код) 
+//     //statusText -  в каком состаяние сервер (текст) 
+//     //responseText / response / текст ответа от бэкенд разработчика 
+//     //readyState - проверка состояний 5 состояний
+
+//     request.addEventListener('readystatechange', function() {
+//         if(request.readyState === 4 && request.status == 200) {
+//             let date = JSON.parse(request.response);
+
+//             inputUsd.value = inputRub.value / date.usd; 
+//         } 
+//     });
+// });
+
+// inputUsd.addEventListener('input', () => {
+//     let request = new XMLHttpRequest();
+
+//     request.open('GET', 'js/current.json');
+//     request.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+//     request.send();
+
+//     request.addEventListener('readystatechange', function() {
+//         if(request.readyState === 4 && request.status == 200) {
+//             let date = JSON.parse(request.response);
+
+//             inputRub.value = inputUsd.value * date.usd; 
+//         } else {
+//             inputUsd.value = 'Что-то пошло не так!';
+//         }
+//     });
+// });
+// let btn = document.querySelector('.btn'),
+//     money = document.querySelector('#money'),
+//     drink = 1;
+
+// btn.addEventListener('click', function(){
+//     shoot({},
+//         function(mark) {
+//             console.log('Вы попали в цель');
+//             win(mark, buyBeer, giveYouMoney);
+//         },
+//         function(miss) {
+//             console.error(miss);
+//             loose();
+//         });
+// });
+
+// function shoot(arrow) {
+//     console.log('Выстрел произведен...');
+//     let promise = new Promise(function(resolve, reject) {
+//         setTimeout(function(){
+//             Math.random() > 0.5 ? resolve({}) : reject('Вы промахнулись');
+//         }, 3000);
+//     });
+    
+//     return promise;
+// }
+
+// function win() {
+//     console.log('Вы победили!');
+//     money.innerHTML = +money.innerHTML + 1;
+//     (drink == 1) ? buyBeer() : giveYouMoney()
+// }
+// function loose() {
+//     console.log("Вы проиграли");
+//     money.innerHTML = +money.innerHTML - 1;
+// }
+
+// function buyBeer() {
+//     console.log('Вам купили пива');
+// }
+// function giveYouMoney() {
+//     console.log('Вам дали денег');
+// }
+
+// shoot({})
+//     .then(mark => console.log('Вы попали в цель'))
+//     .then(win)
+//     .catch(loose)
+
+// localStorage.setItem("number", 21);
+
+
+// //localStorage.removeItem('number') Удалить ключ
+// //localStorage.clear() Удалить все ключи
+// console.log(localStorage.getItem('number'))
+// Прогруска документов
+// window.addEventListener('DOMContentLoaded', function() {
+
+//     let inputLog = document.querySelector('.log'),
+//         inputPas = document.querySelector('.pas'),
+//         cheakbox = document.querySelector('#remember'),
+//         change = document.querySelector('.btn'),
+//         form = document.getElementsByTagName('form')[0]
+
+//     if(localStorage.getItem('isChecked') === 'true') {
+//         cheakbox.checked = true;
+//     }
+
+//     cheakbox.addEventListener('click', function(){
+//         localStorage.setItem('isChecked', true);
+//     });
+
+//     if(localStorage.getItem('bg') === 'changed') {
+//         form.style.backgroundColor = "red"
+//     }
+
+//     change.addEventListener('click', function(){
+//         if(localStorage.getItem('bg') === 'changed'){
+//             localStorage.removeItem('bg');
+//         } else {
+//             localStorage.setItem('bg', 'changed');
+//             form.style.backgroundColor = "red";
+//         }
+//     });
+
+//     let person = {
+//         name: 'Alex',
+//         age: 25,
+//         tech: ['mobile', 'laptop']
+//     }
+
+//     let serializedPersone = JSON.stringify(person);
+
+//     localStorage.setItem('Alex', serializedPersone);
+
+//     console.log(JSON.parse(localStorage.getItem('Alex')))
+    
+// });
+// let json = '{"id":2}';
+// try {
+//    let user = JSON.parse(json);
+//    console.log(user);
+
+//    if(!user.name){
+//        throw new Error('В этих данных нет имени')
+//    }
+// } catch (error) {
+//     console.log(`Мы получили ошибку ${error.name} с ошибкой "${error.message}"`)
+// } finally {
+//     console.log('Всегда выполнюсь')
+// }
+
+
+// $('document').ready(function(){
+//     $('.btn').hover(function(){
+//         $(this).toggleClass('active');
+//     });
+//     $('.btn:eq(3)').on('click', function(){
+//         $('.img:even').hide();
+//     });
+//     $('.btn:eq(4)').on('click', function(){
+//         $('.img:even').show();
+//     });
+//     $('.btn:eq(1)').on('click', function(){
+//         $('.img').animate(
+//             {
+//                 opacity: 'toggle',
+//                 height: 'toggle'
+//             }, 3000
+//         );
+//     });
+// });
+
+function User (name, age) {
+    let UserName = name;
+    let UserAge = age;
+
+    this.getAge = function() {
+        return UserAge;
+    }
+    this.setAge = function(a){
+        if(typeof(a) != Number && a <= 0 && a >= 110){
+            console.log('Введеный возвраст не верен')
+        } else {
+            UserAge = a;
         }
-        let ans1 = 0,
-            ans2 = 0,
-            ans3 = 0;
-        
-        ans1 = +arr1[0] * 86400 + +arr1[1] * 3600 + +arr1[2] * 60 + +arr1[3];
-        ans2 = +arr2[0] * 86400 + +arr2[1] * 3600 + +arr2[2] * 60 + +arr2[3]
-        
-        ans3 = ans2 - ans1;
-        let day = Math.floor(ans3/86400);
-        ans3 -= day * 86400;
-        let hour = Math.floor(ans3/3600);
-        ans3 -= hour * 3600;
-        let min = Math.floor(ans3/60);
-        ans3 -= min * 60;
-        let sec = ans3;
-        ans3 -= sec;
-
-        arr3.push(day);
-        arr3.push(hour);
-        arr3.push(min);
-        arr3.push(sec);
-
-        ans.push('(' + arr3.join(' ') + ')');
-        wrap.innerHTML = ans.join(' ');
     }
-
-
-    for (let i = 0; i < arrStr.length; i++) {
-        howMuch(arrStr[i].split(' '));
+    this.getName = function() {
+        return UserName;
     }
+    this.say = function() {
+        console.log(`Имя пользователя ${this.UserName}, возвраст ${this.userAge}`)
+    }
+}
+
+let Lexa = new User('Lexa', 32)
+console.log(Lexa.setAge(30))
+console.log(Lexa.getAge())

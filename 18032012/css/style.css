@@ -93,7 +93,7 @@ a.item_market_action_button{
 		background-color: inherit;
 } */
 
-.btn {
+/* .btn {
     height: 30px;
     width: 100px;
     background-color: #fef;
@@ -120,4 +120,113 @@ a.item_market_action_button{
     background-color: #99e;
     height: 50px;
     width: auto;
+}
+
+span > span.sale_price {
+    display: block !important;
+    color: green !important;
+}
+span > span.normal_price {
+    display: block !important;
+    color: red !important;
+}
+span.market_listing_price.market_listing_price_with_fee{
+color: #E10505 !important;
+}
+span.market_listing_price.market_listing_price_without_fee{
+display: block !important;
+color: #08B032 !important;
+padding-top: 5px;
+}
+div#market_buyorder_info_details {
+display: block !important;
+}
+a.item_market_action_button{
+    top: 60px;
+    left: 240px;
+}
+
+.price {
+    position: relative;
+    left: -50px;
+}
+.priceFinish {
+    position: absolute;
+    top: 1px;
+    left: 110px;
+        color: white;
+        background-color: inherit;
+} */
+/* 
+.price-table {
+    color: #6B6D74;
+    border: none;
+}
+.price-table__tbody {
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+.price-tbody__tr {
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+.price-tr__tb {
+    padding: 3px;
+    border: 1px solid #ccc;
+}
+.price-tr__tb-btn{
+    align-items: center;
+}
+.price-tb__btn {
+    border: none;
+    background: #00AE3B;
+    line-height: 2;
+    cursor: pointer;
+    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 5px auto;
+}
+.price-tb__btn:hover {
+    background-color: #1ab64f;
+} */
+
+/* .board{
+    height: 640px;
+    width: 640px;
+    margin: 30px auto;
+    border: 1px solid black;
+}
+ 
+.block{
+    height: 80px;
+    width: 80px;
+    float: left;
+}
+ 
+.black{
+    background: black;
+}
+ 
+.white{
+    background: white;
+}
+*/
+.wrap {
+    margin: 0 auto;
+    padding: 5px;
+}
+
+.img {
+    max-width: 500px;
+    max-height: 500px;
+}
+.active {
+    background-color: inherit;
+    color: white;
+    border: none;
+} 
+.btn {
+    border: none;
 }
